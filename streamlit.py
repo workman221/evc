@@ -5,7 +5,7 @@ import pandas as pd
 
 # Components
 st.title("EV Charger Hotspots")
-cl1, cl2, cl3, cl4 = st.beta_columns([2, 2, 2, 1])
+cl1, cl2, cl3, cl4 = st.columns([2, 2, 2, 1])
 st_crit = cl1.selectbox("Criterium", options=["<= Less than", "= Equal to", ">= More than"], index=2)
 st_number = cl2.number_input("Number of Charging Stations", min_value=0, value=1, step=1)
 st_range = cl3.number_input("Distance (km)", min_value=0, value=0, step=1)
@@ -52,7 +52,7 @@ r = pdk.Deck(
 st.pydeck_chart(r)
 
 # Do a web search
-cl0, cl1, cl2, cl3= st.beta_columns([3, 2, 2, 1])
+cl0, cl1, cl2, cl3= st.columns([3, 2, 2, 1])
 st_plz = cl1.selectbox("PLZ", options=plz_evc['plz'].tolist())
 st_search_dist = cl2.number_input("Search distance", min_value=0.0, value=5.0, step=0.5)
 st_button = cl3.button("Search Online")
